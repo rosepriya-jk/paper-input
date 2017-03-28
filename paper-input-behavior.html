@@ -567,7 +567,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     _getErrorMessageKey: function() {
-      var states = this.inputElement.validity;
+      var states = this.tagName === 'PAPER-INPUT' ? this.querySelector('input').validity : this.querySelector('textarea').validity;
       for(var s in states){
         if (states[s]) {
           return s;
